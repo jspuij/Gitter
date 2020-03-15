@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		src\README.md = src\README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Gitter.AndroidApp", "src\Blazor.Gitter.AndroidApp\Blazor.Gitter.AndroidApp.csproj", "{9D2C02A0-E3D7-4136-A70F-7392BB4B1644}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,12 @@ Global
 		{F40F2548-F756-4F17-ACB7-D5AC10D7DF56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F40F2548-F756-4F17-ACB7-D5AC10D7DF56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F40F2548-F756-4F17-ACB7-D5AC10D7DF56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D2C02A0-E3D7-4136-A70F-7392BB4B1644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D2C02A0-E3D7-4136-A70F-7392BB4B1644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D2C02A0-E3D7-4136-A70F-7392BB4B1644}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9D2C02A0-E3D7-4136-A70F-7392BB4B1644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D2C02A0-E3D7-4136-A70F-7392BB4B1644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D2C02A0-E3D7-4136-A70F-7392BB4B1644}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
