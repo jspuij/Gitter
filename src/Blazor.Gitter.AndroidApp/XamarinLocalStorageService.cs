@@ -16,7 +16,7 @@ using Xamarin.Essentials;
 
 namespace Blazor.Gitter.AndroidApp
 {
-    public class XamarinLocalStorageService : ILocalStorageService
+    public class XamarinLocalStorageService : ILocalStorageService, ISyncLocalStorageService
     {
         public event EventHandler<ChangingEventArgs> Changing;
         public event EventHandler<ChangedEventArgs> Changed;
@@ -37,6 +37,8 @@ namespace Blazor.Gitter.AndroidApp
         public async Task<T> GetItemAsync<T>(string key)
         {
             var item = await SecureStorage.GetAsync(key);
+            if (item == null)
+                return default(T);
             return JsonSerializer.Deserialize<T>(item);
         }
 
@@ -99,6 +101,60 @@ namespace Blazor.Gitter.AndroidApp
             };
 
             Changed?.Invoke(this, e);
+        }
+
+        public void Clear()
+        {
+            SecureStorage.RemoveAll();
+            keys.Clear();
+        }
+
+        public T GetItem<T>(string key)
+        {
+            var item = Task.Run(async () => await SecureStorage.GetAsync(key)).Result;
+            if (item == null)
+                return default(T);
+            return JsonSerializer.Deserialize<T>(item);
+        }
+
+        public string Key(int index)
+        {
+            return keys[index];
+        }
+
+        public bool ContainKey(string key)
+        {
+            return keys.Contains(key);
+        }
+
+        public int Length()
+        {
+            return keys.Count;
+        }
+
+        public void RemoveItem(string key)
+        {
+            SecureStorage.Remove(key);
+            keys.Remove(key);
+            keys.Sort();
+        }
+
+        public void SetItem(string key, object data)
+        {
+            var e = RaiseOnChangingSync(key, data);
+
+            if (e.Cancel)
+                return;
+
+            Task.Run(async () => await SecureStorage.SetAsync(key, JsonSerializer.Serialize(data))).Wait();
+
+            if (!keys.Contains(key))
+            {
+                keys.Add(key);
+                keys.Sort();
+            }
+
+            RaiseOnChanged(key, e.OldValue, data);
         }
     }
 }
