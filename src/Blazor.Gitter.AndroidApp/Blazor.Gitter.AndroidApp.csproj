@@ -37,6 +37,7 @@
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <MandroidI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -72,7 +73,7 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
-    <None Include="wwwroot\css\blazor.gitter.css.map" />
+    <None Include="wwwroot\css\blazored.gitter.min.css.map" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_main.xml">
@@ -134,7 +135,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="wwwroot\css\blazor.gitter.css" />
+    <Content Include="wwwroot\css\blazored.gitter.min.css" />
     <Content Include="wwwroot\favicon.ico" />
     <Content Include="wwwroot\index.html" />
   </ItemGroup>

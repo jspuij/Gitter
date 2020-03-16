@@ -22,5 +22,12 @@ gulp.task("sass", async function () {
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('../Blazor.Gitter.Server/wwwroot/css'));
 
-    return es.concat(client, server);
+    var android = gulp.src('content/css/blazor.gitter.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(cleanCSS())
+        .pipe(rename("blazored.gitter.min.css"))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('../Blazor.Gitter.AndroidApp/wwwroot/css'));
+    return es.concat(client, server, android);
 });
