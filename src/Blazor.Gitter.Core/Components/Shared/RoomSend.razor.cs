@@ -106,8 +106,8 @@ namespace Blazor.Gitter.Core.Components.Shared
                         break;
                 }
             }
-            return;
         }
+
         public void Dispose()
         {
             State.GotMessageToQuote -= QuoteMessage;
