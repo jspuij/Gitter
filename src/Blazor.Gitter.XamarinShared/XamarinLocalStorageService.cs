@@ -4,17 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Blazored.LocalStorage;
 
 using Xamarin.Essentials;
 
-namespace Blazor.Gitter.AndroidApp
+namespace Blazor.Gitter.XamarinShared
 {
     public class XamarinLocalStorageService : ILocalStorageService, ISyncLocalStorageService
     {

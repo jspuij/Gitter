@@ -27,7 +27,7 @@ namespace Blazor.Gitter.Server
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddScoped<HttpClient>((s) => new HttpClient())
-                    .AddScoped<IChatApi, GitterApi>()
+                    .AddSingleton<IChatApi>(s => new GitterApi(s.GetRequiredService<HttpClient>(), false))
                     .AddScoped<ILocalStorageService, LocalStorageService>()
                     .AddScoped<ILocalisationHelper, LocalisationHelper>()
                     .AddScoped<IAppState, AppState>();

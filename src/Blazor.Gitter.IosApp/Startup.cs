@@ -3,12 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Microsoft.Extensions.DependencyInjection;
 using BlazorWebView;
 using Blazor.Gitter.Core.Components;
@@ -18,7 +12,7 @@ using Blazor.Gitter.Core.Components.Shared;
 using System.Net.Http;
 using Blazor.Gitter.XamarinShared;
 
-namespace Blazor.Gitter.AndroidApp
+namespace Blazor.Gitter.IosApp
 {
     public class Startup
     {
@@ -28,7 +22,7 @@ namespace Blazor.Gitter.AndroidApp
         /// <param name="services">The collection of services to add to.</param>
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<HttpClient>()
+            services.AddSingleton<HttpClient>(x => new HttpClient())
                 .AddSingleton<IChatApi>(s => new GitterApi(s.GetRequiredService<HttpClient>(), true))
                 .AddSingleton<ILocalStorageService, XamarinLocalStorageService>()
                 .AddSingleton<ILocalisationHelper, LocalisationHelper>()
