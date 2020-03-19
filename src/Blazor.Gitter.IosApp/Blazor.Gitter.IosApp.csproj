@@ -78,7 +78,7 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Essentials" Version="1.5.1" />
     <PackageReference Include="BlazorWebView.iOS">
-      <Version>0.1.0-preview6</Version>
+      <Version>0.1.0-preview7</Version>
     </PackageReference>
     <PackageReference Include="Blazored.LocalStorage">
       <Version>2.1.1</Version>
@@ -128,7 +128,9 @@
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BundleResource Include="Resources\wwwroot\scripts\chat.js" />
+  </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />

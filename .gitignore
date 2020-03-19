@@ -336,3 +336,4 @@ blazored.gitter.min.css
 blazored.gitter.min.css.map
 
 /src/Blazor.Gitter.AndroidApp/Assets/wwwroot.zip
+**/wwwroot/scripts

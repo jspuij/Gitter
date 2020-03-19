@@ -106,10 +106,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BlazorWebView">
-      <Version>0.1.0-preview6</Version>
+      <Version>0.1.0-preview7</Version>
     </PackageReference>
     <PackageReference Include="BlazorWebView.Android">
-      <Version>0.1.0-preview6</Version>
+      <Version>0.1.0-preview7</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Blazor.HttpClient">
       <Version>3.2.0-preview2.20160.5</Version>
@@ -140,6 +140,7 @@
     <Content Include="wwwroot\css\blazored.gitter.min.css" />
     <Content Include="wwwroot\favicon.ico" />
     <Content Include="wwwroot\index.html" />
+    <Content Include="wwwroot\scripts\chat.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

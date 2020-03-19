@@ -19,16 +19,16 @@
     <app>
         @(await Html.RenderComponentAsync<App>(RenderMode.ServerPrerendered))
         @*<div class="loader-container">
-            <div class="loader"></div>
-            <div class="loader-logo">
-                Blazored<span>Gitter</span>.SSE
-            </div>
-            <div class="loader-platform">
-                Server-side Blazor
-            </div>
-        </div>*@
+                <div class="loader"></div>
+                <div class="loader-logo">
+                    Blazored<span>Gitter</span>.SSE
+                </div>
+                <div class="loader-platform">
+                    Server-side Blazor
+                </div>
+            </div>*@
     </app>
-
+    <script src="~/scripts/chat.js"></script>
     <script src="_framework/blazor.server.js"></script>
 </body>
 </html>
