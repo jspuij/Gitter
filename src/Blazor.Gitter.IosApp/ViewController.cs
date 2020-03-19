@@ -18,7 +18,6 @@ namespace Blazor.Gitter.IosApp
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
             this.disposable = BlazorWebViewHost.Run<Startup>(this.BlazorWebView, "wwwroot/index.html");
-
         }
 
         public override void DidReceiveMemoryWarning()
